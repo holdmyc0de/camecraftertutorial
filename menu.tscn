@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://xy15aivuuhfp"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_hm1jm"]
+[ext_resource type="PackedScene" uid="uid://bj2jhvlno186u" path="res://bg.tscn" id="2_gqmul"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_hm1jm")
+
+[node name="play" type="Button" parent="."]
+offset_left = 378.0
+offset_top = 169.0
+offset_right = 770.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 30
+text = "PLAY"
+
+[node name="QUIT" type="Button" parent="."]
+offset_left = 376.0
+offset_top = 321.0
+offset_right = 768.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 30
+text = "ЛИВНУТЬ С ПОЗОРОМ"
+
+[node name="BG" parent="." instance=ExtResource("2_gqmul")]
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]
